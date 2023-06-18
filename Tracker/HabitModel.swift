@@ -5,4 +5,15 @@ struct HabitModel: Hashable, Codable {
     var motivation: String?
     var progress: UInt
     var color: Color?
+    
+    /// нужно добавлять через метод и чекать по дате
+    private(set) var habitProgresses: [HabitProgress] = []
+    
+    func addHabitProgress(_ habitProgress: HabitProgress) {
+    }
+}
+
+struct HabitProgress: Hashable, Codable {
+    var done: Bool
+    var date: Date
 }

@@ -11,6 +11,9 @@
 		ED75A53D2A3F74AC0066BE69 /* Color+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED75A53C2A3F74AC0066BE69 /* Color+extension.swift */; };
 		EDA684C72A3F7BBB00EC71A8 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA684C62A3F7BBB00EC71A8 /* Storage.swift */; };
 		EDA684C92A3F7BED00EC71A8 /* HabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA684C82A3F7BED00EC71A8 /* HabitModel.swift */; };
+		EDA684CC2A3F7F4900EC71A8 /* DetailHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA684CB2A3F7F4900EC71A8 /* DetailHabitView.swift */; };
+		EDA684CE2A3F7F6100EC71A8 /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA684CD2A3F7F6100EC71A8 /* NewHabitView.swift */; };
+		EDA684D02A3F7F8200EC71A8 /* HabitProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA684CF2A3F7F8200EC71A8 /* HabitProgressCell.swift */; };
 		EDB3E4EB2A2FC7D000BF1BE0 /* HabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3E4EA2A2FC7D000BF1BE0 /* HabitApp.swift */; };
 		EDB3E4ED2A2FC7D000BF1BE0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3E4EC2A2FC7D000BF1BE0 /* MainView.swift */; };
 		EDB3E4EF2A2FC7D900BF1BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB3E4EE2A2FC7D900BF1BE0 /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 		ED75A53C2A3F74AC0066BE69 /* Color+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+extension.swift"; sourceTree = "<group>"; };
 		EDA684C62A3F7BBB00EC71A8 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		EDA684C82A3F7BED00EC71A8 /* HabitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitModel.swift; sourceTree = "<group>"; };
+		EDA684CB2A3F7F4900EC71A8 /* DetailHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHabitView.swift; sourceTree = "<group>"; };
+		EDA684CD2A3F7F6100EC71A8 /* NewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitView.swift; sourceTree = "<group>"; };
+		EDA684CF2A3F7F8200EC71A8 /* HabitProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitProgressCell.swift; sourceTree = "<group>"; };
 		EDB3E4E72A2FC7D000BF1BE0 /* Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB3E4EA2A2FC7D000BF1BE0 /* HabitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitApp.swift; sourceTree = "<group>"; };
 		EDB3E4EC2A2FC7D000BF1BE0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -40,6 +46,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EDA684CA2A3F7F3200EC71A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EDB3E4EC2A2FC7D000BF1BE0 /* MainView.swift */,
+				EDA684CB2A3F7F4900EC71A8 /* DetailHabitView.swift */,
+				EDA684CD2A3F7F6100EC71A8 /* NewHabitView.swift */,
+				EDA684CF2A3F7F8200EC71A8 /* HabitProgressCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EDB3E4DE2A2FC7D000BF1BE0 = {
 			isa = PBXGroup;
 			children = (
@@ -59,8 +76,8 @@
 		EDB3E4E92A2FC7D000BF1BE0 /* Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				EDA684CA2A3F7F3200EC71A8 /* Views */,
 				EDB3E4EA2A2FC7D000BF1BE0 /* HabitApp.swift */,
-				EDB3E4EC2A2FC7D000BF1BE0 /* MainView.swift */,
 				EDB3E4EE2A2FC7D900BF1BE0 /* Assets.xcassets */,
 				EDB3E4F02A2FC7D900BF1BE0 /* Preview Content */,
 				ED75A53A2A3DDA330066BE69 /* HabitRepository.swift */,
@@ -149,10 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA684CC2A3F7F4900EC71A8 /* DetailHabitView.swift in Sources */,
 				EDA684C92A3F7BED00EC71A8 /* HabitModel.swift in Sources */,
+				EDA684CE2A3F7F6100EC71A8 /* NewHabitView.swift in Sources */,
 				EDB3E4ED2A2FC7D000BF1BE0 /* MainView.swift in Sources */,
 				ED75A53B2A3DDA330066BE69 /* HabitRepository.swift in Sources */,
 				EDB3E4EB2A2FC7D000BF1BE0 /* HabitApp.swift in Sources */,
+				EDA684D02A3F7F8200EC71A8 /* HabitProgressCell.swift in Sources */,
 				ED75A53D2A3F74AC0066BE69 /* Color+extension.swift in Sources */,
 				EDA684C72A3F7BBB00EC71A8 /* Storage.swift in Sources */,
 			);
