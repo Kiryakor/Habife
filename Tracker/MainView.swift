@@ -1,14 +1,4 @@
 import SwiftUI
-import Combine
-
-// MARK: - HabitModel
-
-struct HabitModel: Hashable, Codable {
-    var name: String
-    var motivation: String?
-    var progress: UInt
-    var color: Color?
-}
 
 // MARK: - MainView
 
