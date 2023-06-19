@@ -7,9 +7,6 @@ struct MainView: View {
     @State private var models: [HabitModel] = []
     
     @State private var showingNewHabit = false
-    @State private var showingDetailHabit = false
-    
-    @State private var detailModel: HabitModel? = nil
     
     private var habitRepository: HabitRepositoryProtocol
     
@@ -23,15 +20,12 @@ struct MainView: View {
         NavigationView {
             List {
                 Section {
-                    ForEach(Array(models.enumerated()), id: \.offset) { index, model in
-                        HabitProgressCell(model: model)
-                            .onTapGesture(perform: {
-                                detailModel = model
-                                showingDetailHabit = true
-                            })
-                            .onLongPressGesture{
-                                print("longPressed")
-                            }
+                    ForEach(models, id: \.self) { model in
+                        NavigationLink {
+                            DetailHabitView(model: model)
+                        } label: {
+                            HabitProgressCell(model: model)
+                        }
                     }
                     .onDelete(perform: delete(at:))
                 }
@@ -50,17 +44,9 @@ struct MainView: View {
             .sheet(isPresented: $showingNewHabit) {
                 NewHabitView(isPresented: $showingNewHabit) { model in
                     models.append(model)
-                    habitRepository.save(models) // test
+                    saveModels()
                 }
             }
-            .sheet(isPresented: $showingDetailHabit,
-                   onDismiss: { detailModel = nil },
-                   content: {
-                DetailHabitView(
-                    isPresented: $showingDetailHabit,
-                    model: detailModel!
-                )
-            })
         }
         .task {
             models = await habitRepository.getHabits()
@@ -69,6 +55,12 @@ struct MainView: View {
     
     private func delete(at offsets: IndexSet) {
         models.remove(atOffsets: offsets)
+        saveModels()
+    }
+    
+    private func saveModels() {
+        // надо бы diff считать, а не на каждый чих все перезаписывать
+        habitRepository.save(models)
     }
 }
 
