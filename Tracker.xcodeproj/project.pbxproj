@@ -18,6 +18,7 @@
 		EDB3E4ED2A2FC7D000BF1BE0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3E4EC2A2FC7D000BF1BE0 /* MainView.swift */; };
 		EDB3E4EF2A2FC7D900BF1BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB3E4EE2A2FC7D900BF1BE0 /* Assets.xcassets */; };
 		EDB3E4F22A2FC7D900BF1BE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB3E4F12A2FC7D900BF1BE0 /* Preview Assets.xcassets */; };
+		EDC61EC02A40CE010040A418 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = EDC61EBF2A40CE010040A418 /* Charts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDC61EC02A40CE010040A418 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +114,9 @@
 			dependencies = (
 			);
 			name = Tracker;
+			packageProductDependencies = (
+				EDC61EBF2A40CE010040A418 /* Charts */,
+			);
 			productName = Tracker;
 			productReference = EDB3E4E72A2FC7D000BF1BE0 /* Tracker.app */;
 			productType = "com.apple.product-type.application";
@@ -140,6 +145,9 @@
 				Base,
 			);
 			mainGroup = EDB3E4DE2A2FC7D000BF1BE0;
+			packageReferences = (
+				EDC61EBE2A40CE010040A418 /* XCRemoteSwiftPackageReference "swiftui-charts" */,
+			);
 			productRefGroup = EDB3E4E82A2FC7D000BF1BE0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -377,6 +385,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EDC61EBE2A40CE010040A418 /* XCRemoteSwiftPackageReference "swiftui-charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spacenation/swiftui-charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EDC61EBF2A40CE010040A418 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDC61EBE2A40CE010040A418 /* XCRemoteSwiftPackageReference "swiftui-charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDB3E4DF2A2FC7D000BF1BE0 /* Project object */;
 }
