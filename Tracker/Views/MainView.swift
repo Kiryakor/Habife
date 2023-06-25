@@ -19,16 +19,16 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             List {
-                Section {
-                    ForEach(models, id: \.self) { model in
+                ForEach(models, id: \.self) { model in
+                    Section {
                         NavigationLink {
                             DetailHabitView(model: model)
                         } label: {
                             HabitProgressCell(model: model)
                         }
                     }
-                    .onDelete(perform: delete(at:))
                 }
+                .onDelete(perform: delete(at:))
             }
             .navigationTitle("Habife")
             .toolbar {

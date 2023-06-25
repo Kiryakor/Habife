@@ -7,26 +7,36 @@ protocol StorageProtocol {
     func save(_ models: [Model])
 }
 
+enum DocumentsStoragePath: String {
+    case habitModels = "documentsStorage.txt"
+}
+
 final class DocumentsStorage<Model: Codable>: StorageProtocol {
+    
+    init(with storagePath: String) {
+        self.path = storagePath
+    }
     
     func getAll() async -> [Model] {
         guard
-            let readData = try? Data(contentsOf: habitsDataURL),
+            let readData = try? Data(contentsOf: fullPath),
             let data = try? JSONDecoder().decode([Model].self, from: readData)
         else { return [] }
+        
+        print("path: ", fullPath)
         
         return data
     }
     
     func save(_ models: [Model]) {
         guard let jsonData = try? JSONEncoder().encode(models.self) else { return }
-        try? jsonData.write(to: habitsDataURL)
+        try? jsonData.write(to: fullPath)
     }
     
-    private let file = "documentsStorage.txt"
+    private var path: String
     
-    private var habitsDataURL: URL {
-        return documentDirectoryURL.appendingPathComponent(file)
+    private var fullPath: URL {
+        return documentDirectoryURL.appendingPathComponent(path)
     }
     
     private var documentDirectoryURL: URL {
