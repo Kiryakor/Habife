@@ -6,7 +6,7 @@ struct NewHabitView: View {
     
     @State private var name: String = ""
     @State private var motivation: String = ""
-    @State private var color = Color.red
+    @State private var color = Color.randomColor()
     
     var addCallback: ((HabitModel) -> Void)?
     
@@ -16,15 +16,20 @@ struct NewHabitView: View {
                 Section {
                     VStack(alignment: .leading, spacing: 8, content: {
                         Text("Название")
+                            .font(Font.body)
                         TextField("Спорт", text: $name)
                     })
                     
                     VStack(alignment: .leading, spacing: 8, content: {
-                        Text("Мотивация")
+                        Text("Описание")
+                            .font(Font.body)
                         TextField("Не ленись !", text: $motivation)
                     })
                     VStack {
-                        ColorPicker("Выберите цвет", selection: $color)
+                        ColorPicker(selection: $color) {
+                            Text("Выберите цвет")
+                                .font(Font.body)
+                        }
                     }
                 }
             }
@@ -45,7 +50,7 @@ struct NewHabitView: View {
                     } label: {
                         Text("Сохранить")
                     }
-                    .disabled(name.isEmpty)
+                    .disabled(name.isEmpty || motivation.isEmpty)
                 }
             }
         }

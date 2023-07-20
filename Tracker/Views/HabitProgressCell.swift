@@ -9,6 +9,9 @@ struct HabitProgressCell: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text(model.name)
                     .font(Font.title)
+                    .ifNeeded(model.progress == 1) {
+                        $0.strikethrough()
+                    }
                 Text(model.motivation)
                     .font(Font.subheadline)
             }
@@ -27,6 +30,7 @@ struct HabitProgressCell: View {
         }
         .padding(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
         .contentShape(Rectangle())
+        .opacity(model.progress == 1 ? 0.3 : 1)
     }
 }
 

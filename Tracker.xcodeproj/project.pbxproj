@@ -19,6 +19,7 @@
 		EDB3E4EF2A2FC7D900BF1BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB3E4EE2A2FC7D900BF1BE0 /* Assets.xcassets */; };
 		EDB3E4F22A2FC7D900BF1BE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB3E4F12A2FC7D900BF1BE0 /* Preview Assets.xcassets */; };
 		EDC61EC02A40CE010040A418 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = EDC61EBF2A40CE010040A418 /* Charts */; };
+		EDE040342A69C92A00AC18E3 /* View+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE040332A69C92900AC18E3 /* View+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		EDB3E4EC2A2FC7D000BF1BE0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EDB3E4EE2A2FC7D900BF1BE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDB3E4F12A2FC7D900BF1BE0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EDE040332A69C92900AC18E3 /* View+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				ED75A53C2A3F74AC0066BE69 /* Color+extension.swift */,
 				EDA684C62A3F7BBB00EC71A8 /* Storage.swift */,
 				EDA684C82A3F7BED00EC71A8 /* HabitModel.swift */,
+				EDE040332A69C92900AC18E3 /* View+extension.swift */,
 			);
 			path = Tracker;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDE040342A69C92A00AC18E3 /* View+extension.swift in Sources */,
 				EDA684CC2A3F7F4900EC71A8 /* DetailHabitView.swift in Sources */,
 				EDA684C92A3F7BED00EC71A8 /* HabitModel.swift in Sources */,
 				EDA684CE2A3F7F6100EC71A8 /* NewHabitView.swift in Sources */,

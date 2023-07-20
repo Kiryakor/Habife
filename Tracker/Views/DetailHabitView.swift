@@ -42,22 +42,32 @@ struct ChartView: View {
                 Rectangle().foregroundColor(.clear).frame(width: 20, height: 20)
             }
             VStack {
-                Chart(data: [0.1, 0.3, 0.2, 0.5, 0.4, 0.9, 1])
-                    .chartStyle(
-                        ColumnChartStyle(
-                            column: Rectangle().foregroundColor(.green),
-                            spacing: 4
+                ZStack {
+                    Chart(data: [0.1, 0.3, 0.2, 0.6, 0.55, 0.8, 1])
+                        .chartStyle(
+                            AreaChartStyle(
+                                .quadCurve,
+                                fill: LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(1.0), Color.blue.opacity(0.5)]),
+                                    startPoint: .top,
+                                    endPoint: .bottom
+                                )
+                            )
                         )
-                    )
-                    .padding()
-                    .background(
-                        GridPattern(
-                            horizontalLines: 20 + 1,
-                            verticalLines: [0.1, 0.3, 0.2, 0.5, 0.4, 0.9, 1].count + 1
+                        .background(
+                            GridPattern(
+                                horizontalLines: 20 + 1,
+                                verticalLines: [0.1, 0.3, 0.2, 0.5, 0.4, 0.9, 1].count + 1
+                            )
+                            .inset(by: 1)
+                            .stroke(Color.gray.opacity(0.1), style: .init(lineWidth: 2, lineCap: .round))
                         )
-                        .inset(by: 1)
-                        .stroke(Color.gray.opacity(0.1), style: .init(lineWidth: 2, lineCap: .round))
-                    )
+                    Chart(data: [0.1, 1])
+                        .chartStyle(
+                            LineChartStyle(.line, lineColor: .red.opacity(0.5), lineWidth: 3)
+                        )
+                }
+                .padding()
                 AxisLabels(.horizontal, data: 2010...2020, id: \.self) {
                     Text("\($0)".replacingOccurrences(of: ",", with: ""))
                         .fontWeight(.bold)

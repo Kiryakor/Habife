@@ -15,6 +15,12 @@ extension Color {
         
         return (r, g, b, a)
     }
+    
+    static func randomColor() -> Color {
+        return [
+            Color.red, Color.blue, Color.orange, Color.yellow, Color.green, Color.purple, Color.pink
+        ].randomElement()!
+    }
 }
 
 extension Color: Codable {

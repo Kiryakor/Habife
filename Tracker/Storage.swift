@@ -23,8 +23,6 @@ final class DocumentsStorage<Model: Codable>: StorageProtocol {
             let data = try? JSONDecoder().decode([Model].self, from: readData)
         else { return [] }
         
-        print("path: ", fullPath)
-        
         return data
     }
     

@@ -27,8 +27,21 @@ struct MainView: View {
                             HabitProgressCell(model: model)
                         }
                     }
+                    .swipeActions(edge: .trailing) {
+                        Button("Delete") {
+                            delete(at: model)
+                        }
+                        .tint(.red)
+                    }
+                    .ifNeeded(model.progress != 1) {
+                        $0.swipeActions(edge: .leading) {
+                            Button("Order") {
+                                updateProgress(for: model)
+                            }
+                            .tint(.green)
+                        }
+                    }
                 }
-                .onDelete(perform: delete(at:))
             }
             .navigationTitle("Habife")
             .toolbar {
@@ -37,24 +50,50 @@ struct MainView: View {
                         showingNewHabit = true
                     } label: {
                         Image(systemName: "plus")
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.primary)
                     }
                 }
             }
             .sheet(isPresented: $showingNewHabit) {
                 NewHabitView(isPresented: $showingNewHabit) { model in
-                    models.append(model)
+                    models.insert(model, at: 0)
                     saveModels()
                 }
             }
         }
         .task {
-            models = await habitRepository.getHabits()
+            var models = await habitRepository.getHabits()
+
+            models.sort { lhs, rhs in
+                if lhs.progress == 1 {
+                    return false
+                }
+                if rhs.progress == 1 {
+                    return true
+                }
+                return true
+            }
+            self.models = models
         }
     }
     
-    private func delete(at offsets: IndexSet) {
-        models.remove(atOffsets: offsets)
+    private func updateProgress(for model: HabitModel) {
+        guard let index = models.firstIndex(of: model) else { return }
+        
+        var progress = model.progress + 0.1
+        if progress > 1 {
+            progress = 1
+        }
+        
+        models[index].progress = progress
+        
+        saveModels()
+    }
+    
+    private func delete(at model: HabitModel) {
+        guard let index = models.firstIndex(of: model) else { return }
+            
+        models.remove(at: index)
         saveModels()
     }
     
