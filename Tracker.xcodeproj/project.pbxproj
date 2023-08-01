@@ -20,6 +20,8 @@
 		EDB3E4F22A2FC7D900BF1BE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB3E4F12A2FC7D900BF1BE0 /* Preview Assets.xcassets */; };
 		EDC61EC02A40CE010040A418 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = EDC61EBF2A40CE010040A418 /* Charts */; };
 		EDE040342A69C92A00AC18E3 /* View+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE040332A69C92900AC18E3 /* View+extension.swift */; };
+		EDE040362A69E2FC00AC18E3 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE040352A69E2FC00AC18E3 /* CircularProgressView.swift */; };
+		EDE040382A69E3A900AC18E3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE040372A69E3A900AC18E3 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		EDB3E4EE2A2FC7D900BF1BE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDB3E4F12A2FC7D900BF1BE0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EDE040332A69C92900AC18E3 /* View+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extension.swift"; sourceTree = "<group>"; };
+		EDE040352A69E2FC00AC18E3 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		EDE040372A69E3A900AC18E3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 				EDA684CB2A3F7F4900EC71A8 /* DetailHabitView.swift */,
 				EDA684CD2A3F7F6100EC71A8 /* NewHabitView.swift */,
 				EDA684CF2A3F7F8200EC71A8 /* HabitProgressCell.swift */,
+				EDE040352A69E2FC00AC18E3 /* CircularProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -89,6 +94,7 @@
 				EDA684C62A3F7BBB00EC71A8 /* Storage.swift */,
 				EDA684C82A3F7BED00EC71A8 /* HabitModel.swift */,
 				EDE040332A69C92900AC18E3 /* View+extension.swift */,
+				EDE040372A69E3A900AC18E3 /* Constants.swift */,
 			);
 			path = Tracker;
 			sourceTree = "<group>";
@@ -187,6 +193,8 @@
 				EDA684D02A3F7F8200EC71A8 /* HabitProgressCell.swift in Sources */,
 				ED75A53D2A3F74AC0066BE69 /* Color+extension.swift in Sources */,
 				EDA684C72A3F7BBB00EC71A8 /* Storage.swift in Sources */,
+				EDE040362A69E2FC00AC18E3 /* CircularProgressView.swift in Sources */,
+				EDE040382A69E3A900AC18E3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

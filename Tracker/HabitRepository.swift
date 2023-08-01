@@ -27,6 +27,8 @@ final class HabitRepository<T>: HabitRepositoryProtocol where T: StorageProtocol
         self.storage = storage
     }
     
+    // MARK: - Public
+    
     func getHabits() async -> [HabitModel] {
         return await storage.getAll()
     }

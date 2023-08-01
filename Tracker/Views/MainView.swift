@@ -77,6 +77,8 @@ struct MainView: View {
         }
     }
     
+    // MARK: - Private
+    
     private func updateProgress(for model: HabitModel) {
         guard let index = models.firstIndex(of: model) else { return }
         

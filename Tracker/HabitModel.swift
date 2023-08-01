@@ -8,9 +8,6 @@ struct HabitModel: Hashable, Codable {
     
     /// нужно добавлять через метод и чекать по дате
     private(set) var habitProgresses: [HabitProgress] = []
-    
-    func addHabitProgress(_ habitProgress: HabitProgress) {
-    }
 }
 
 struct HabitProgress: Hashable, Codable {

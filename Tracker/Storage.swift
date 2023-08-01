@@ -7,15 +7,13 @@ protocol StorageProtocol {
     func save(_ models: [Model])
 }
 
-enum DocumentsStoragePath: String {
-    case habitModels = "documentsStorage.txt"
-}
-
 final class DocumentsStorage<Model: Codable>: StorageProtocol {
     
     init(with storagePath: String) {
         self.path = storagePath
     }
+    
+    // MARK: - Public
     
     func getAll() async -> [Model] {
         guard
@@ -30,6 +28,8 @@ final class DocumentsStorage<Model: Codable>: StorageProtocol {
         guard let jsonData = try? JSONEncoder().encode(models.self) else { return }
         try? jsonData.write(to: fullPath)
     }
+    
+    // MARK: - Private
     
     private var path: String
     
